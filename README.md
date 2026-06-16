@@ -2,32 +2,6 @@
 
 API REST criada com Spring Boot para gerenciar usuarios, perfis e o vinculo entre eles. O projeto usa Spring Web MVC, Spring Data JPA, validacao Jakarta, MySQL, Lombok e Actuator.
 
-## Funcionamento
-
-A aplicacao expõe endpoints HTTP para:
-
-- cadastrar, listar, buscar, atualizar e remover usuarios;
-- cadastrar, listar, buscar, atualizar e remover perfis;
-- vincular e desvincular perfis de um usuario;
-- consultar os perfis associados a um usuario;
-- consultar o status da aplicacao pelo Actuator.
-
-O relacionamento principal e:
-
-- `User`: representa um usuario, com `id`, `name`, `email`, `password` e lista de perfis vinculados;
-- `Profile`: representa um perfil de acesso ou classificacao, com `id` UUID e `description`;
-- `UserProfile`: tabela de associacao entre usuario e perfil.
-
-Por padrao, a aplicacao usa o banco MySQL `financeiro` em `localhost:3306` e cria/atualiza as tabelas automaticamente com `spring.jpa.hibernate.ddl-auto=update`.
-
-## Requisitos
-
-- Java 17;
-- Maven 3.8+ ou o Maven Wrapper do projeto (`./mvnw`);
-- MySQL em execucao;
-- um banco chamado `financeiro`;
-- Lombok habilitado na IDE, caso va editar o projeto por ela.
-
 ## Configuracao Inicial
 
 Crie o banco de dados:
