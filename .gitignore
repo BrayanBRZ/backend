@@ -1,0 +1,16 @@
+# Build
+target/
+*.class
+*.log
+
+# IDEs
+.idea/
+.vscode/
+
+# Local environment and secrets
+.env
+application-secrets.properties
+src/main/resources/application-secrets.properties
+
+# Maven Wrapper runtime cache
+.mvn/wrapper/*.jar
