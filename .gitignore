@@ -10,7 +10,9 @@ target/
 # Local environment and secrets
 .env
 application-secrets.properties
+application.properties
 src/main/resources/application-secrets.properties
+src/main/resources/application.properties
 
 # Maven Wrapper runtime cache
 .mvn/wrapper/*.jar

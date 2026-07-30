@@ -22,9 +22,17 @@ public class UserService {
     @Autowired
     private ProfileRepository profileRepository;
 
+    @Autowired
+    private SendEmailService emailService;
+
     @Transactional
     public User insert(User user) {
-        return repository.save(user);
+        User userDb = repository.save(user);
+        emailService.sendEmail(
+            user.getEmail(),
+            "Sucess",
+            "Registration successful!");
+        return userDb;
     }
 
     @Transactional
