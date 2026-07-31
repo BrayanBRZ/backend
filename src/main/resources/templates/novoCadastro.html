@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro realizado</title>
+</head>
+<body style="margin: 0; padding: 24px; background-color: #f4f6f8; font-family: Arial, sans-serif; color: #1f2933;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td align="center">
+                <table role="presentation"
+                       style="width: 100%; max-width: 560px; border-collapse: collapse; background-color: #ffffff; border: 1px solid #d9e2ec;">
+                    <tr>
+                        <td style="padding: 32px;">
+                            <h1 style="margin: 0 0 20px; font-size: 24px; color: #102a43;">Cadastro realizado</h1>
+                            <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5;">
+                                Olá, <strong th:text="${name}">usuário</strong>!
+                            </p>
+                            <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5;">
+                                Seu cadastro foi concluído com sucesso.
+                            </p>
+                            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52606d;">
+                                E-mail cadastrado:
+                                <span th:text="${email}">email@exemplo.com</span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

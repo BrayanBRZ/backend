@@ -10,9 +10,10 @@ Crie o banco de dados:
 CREATE DATABASE financeiro CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-Crie o arquivo local de segredos a partir do exemplo:
+Crie os arquivos locais de configuracao a partir dos exemplos:
 
 ```bash
+cp src/main/resources/application-example.properties src/main/resources/application.properties
 cp src/main/resources/application-secrets-example.properties src/main/resources/application-secrets.properties
 ```
 

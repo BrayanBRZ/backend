@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.context.Context;
 
 import com.ifpr.backend.model.Profile;
 import com.ifpr.backend.model.User;
@@ -28,16 +29,21 @@ public class UserService {
     @Transactional
     public User insert(User user) {
         User userDb = repository.save(user);
-        emailService.sendEmail(
-            user.getEmail(),
-            "Sucess",
-            "Registration successful!");
+
+        Context context = new Context();
+        context.setVariable("name", userDb.getName());
+        context.setVariable("email", userDb.getEmail());
+        emailService.sendEmailTemplate(
+                userDb.getEmail(),
+                "Sucesso",
+                "novoCadastro",
+                context);
         return userDb;
     }
 
     @Transactional
     public User update(User user) {
-        
+
         User foundedUser = findById(user.getId());
         foundedUser.setName(user.getName());
         foundedUser.setEmail(user.getEmail());
